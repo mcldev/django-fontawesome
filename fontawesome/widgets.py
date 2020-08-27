@@ -39,18 +39,11 @@ class IconWidget(forms.Select):
                 force_text(option_label),
             )
 
-    # Required for Django 1.11 + Widgets now use templates.
-    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
-        option = super(IconWidget, self).create_option(name, value, label, selected, index, subindex, attrs)
-        option['attrs']['data-icon'] = value
-        return option
-
-
     class Media:
 
         js = (
+            'fontawesome/select2/select2.min.js',
             'fontawesome/js/django_fontawesome.js',
-            'fontawesome/select2/select2.min.js'
         )
 
         css = {
