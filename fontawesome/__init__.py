@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.utils.html import format_html
 
-class Icon(object):
+class Icon:
 
     def __init__(self, id):
         self.id = id
@@ -15,6 +15,3 @@ class Icon(object):
 
     def __str__(self):
         return self.id
-
-    def __unicode__(self):
-        return str(self)

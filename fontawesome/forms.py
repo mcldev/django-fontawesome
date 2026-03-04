@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 from django import forms
 from django.conf import settings
 
@@ -14,7 +12,7 @@ class IconFormField(forms.Field):
         if 'initial' in kwargs:
            kwargs['initial'] = Icon(kwargs['initial'])
 
-        super(IconFormField, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def widget_attrs(self, widget):
         classes = widget.attrs.get('class', '').split()
